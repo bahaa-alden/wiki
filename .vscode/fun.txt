@@ -1,0 +1,45 @@
+function showDetails(us = "Unknown", ag = "Unknown", av = "Unknown") {
+  document.write(`<div>`);
+  typeof us === "string"
+    ? typeof ag === "number"
+      ? document.write(
+          `Hello ${us}, Your Age IS ${ag},You Are ${
+            !av ? "Not" : ""
+          } Availbale For Hire`
+        )
+      : document.write(
+          `Hello ${us}, Your Age IS ${av},You Are ${
+            !ag ? "Not" : ""
+          } Availbale For Hire`
+        )
+    : typeof ag === "string"
+    ? typeof us === "number"
+      ? document.write(
+          `Hello ${ag}, Your Age IS ${us},You Are ${
+            !av ? "Not" : ""
+          } Availbale For Hire`
+        )
+      : document.write(
+          `Hello ${ag}, Your Age IS ${av},You Are ${
+            !us ? "Not" : ""
+          } Availbale For Hire`
+        )
+    : typeof ag === "number"
+    ? document.write(
+        `Hello ${av}, Your Age IS ${ag},You Are ${
+          !us ? "Not" : ""
+        } Availbale For Hire`
+      )
+    : document.write(
+        `Hello ${av}, Your Age IS ${us},You Are ${
+          !ag ? "Not" : ""
+        } Availbale For Hire`
+      );
+  document.write(`</div>`);
+}
+showDetails(13, true, "dsa");
+showDetails(13, "dsa", true);
+showDetails("dsa", true, 13);
+showDetails("dsa", 13, true);
+showDetails(true, "dsa", 13);
+showDetails(true, 13, "dsa");
